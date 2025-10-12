@@ -4,6 +4,15 @@ import { client } from "@/sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
+// Тип для одного поста (под твою GROQ-проекцию)
+type Post = {
+    _id: string;
+    title: string;
+    slug: { current: string };
+    publishedAt: string; // ISO-string в Sanity
+    image?: SanityImageSource | null;
+};
+
 // Создаём builder для Sanity изображений
 const builder = imageUrlBuilder({
     projectId: "0unkcvxg",
@@ -30,7 +39,8 @@ const options = { next: { revalidate: 30 } };
 
 // Асинхронный компонент (серверный)
 export default async function LatestPosts() {
-    const posts = await client.fetch(POSTS_QUERY, {}, options);
+    // ВАЖНО: даём дженерик с типом ответа
+    const posts = await client.fetch<Post[]>(POSTS_QUERY, {}, options);
 
     return (
         <section className="dark:bg-gray-900">
@@ -48,10 +58,11 @@ export default async function LatestPosts() {
                         <p className="text-gray-400">No posts yet...</p>
                     )}
 
-                    {posts.map((post: any) => {
-                        const imageUrl = post.image
-                            ? urlFor(post.image).width(550).height(310).url()
-                            : "https://cdn.sanity.io/images/0unkcvxg/production/5cceef968ad7f4e95d1b6e13b1278a140a304ca8-1536x1024.webp";
+                    {posts.map((post) => {
+                        const imageUrl =
+                            post.image
+                                ? urlFor(post.image).width(550).height(310).url()
+                                : "https://cdn.sanity.io/images/0unkcvxg/production/5cceef968ad7f4e95d1b6e13b1278a140a304ca8-1536x1024.webp";
 
                         return (
                             <div key={post._id}>
