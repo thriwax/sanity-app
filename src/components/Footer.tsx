@@ -16,7 +16,7 @@ const Footer = () => {
                 <div className="flex -mx-2">
 
                     <Link
-                        href="#"
+                        href="https://github.com/thriwax"
                         aria-label="Github"
                         className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
                     >
