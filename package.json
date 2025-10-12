@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sanity/image-url": "^1.2.0",
+    "animejs": "^4.2.2",
     "next": "15.5.4",
     "next-sanity": "^11.4.2",
     "react": "19.1.0",
@@ -21,6 +22,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "daisyui": "^5.2.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
     "tailwindcss": "^4",
