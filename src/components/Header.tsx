@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -52,13 +53,11 @@ export default function Header() {
 
     return (
         <header className="sticky top-0 z-50 backdrop-blur p-5">
-            <nav className="mx-auto flex h-16 items-center justify-between px-4 bg-[#1A1A1A] rounded-xl border-[#272727] border-2 shadow-md">
-                <a
-                    href="/"
-                    className="rounded-md px-2 py-1 text-2xl font-bold bg-[#272727] text-white hover:bg-white hover:text-black transition"
-                >
+            <nav className="container mx-auto flex h-16 items-center justify-between px-4 bg-[#1A1A1A] rounded-xl border-[#272727] border-2 shadow-md">
+
+                <Link href="/about" className="rounded-md px-2 py-1 text-2xl font-bold bg-[#272727] text-white hover:bg-white hover:text-black transition">
                     Fedor Tatarintsev
-                </a>
+                </Link>
 
                 <button
                     type="button"
@@ -111,13 +110,13 @@ export default function Header() {
                             <ul className="space-y-2">
                                 {links.map((item) => (
                                     <li key={item.href}>
-                                        <a
+                                        <Link
                                             href={item.href}
                                             onClick={close}
                                             className="block rounded-xl px-4 py-3 text-center text-lg font-medium text-black/90 transition hover:bg-black/5 focus:outline-none focus-visible:ring"
                                         >
                                             {item.label}
-                                        </a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
