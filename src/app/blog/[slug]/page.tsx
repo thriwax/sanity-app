@@ -1,4 +1,5 @@
 import { PortableText, type SanityDocument } from "next-sanity";
+import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "@/sanity/client";
@@ -30,7 +31,7 @@ export default async function PostPage({
                 ← Back to posts
             </Link>
             {postImageUrl && (
-                <img
+                <Image
                     src={postImageUrl}
                     alt={post.title}
                     className="aspect-video rounded-xl"

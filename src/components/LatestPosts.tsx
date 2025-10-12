@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { client } from "@/sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
@@ -50,11 +51,11 @@ export default async function LatestPosts() {
                     {posts.map((post: any) => {
                         const imageUrl = post.image
                             ? urlFor(post.image).width(550).height(310).url()
-                            : "https://via.placeholder.com/550x310?text=No+Image";
+                            : "https://cdn.sanity.io/images/0unkcvxg/production/5cceef968ad7f4e95d1b6e13b1278a140a304ca8-1536x1024.webp";
 
                         return (
                             <div key={post._id}>
-                                <img
+                                <Image
                                     className="object-cover object-center w-full h-64 rounded-lg lg:h-80"
                                     src={imageUrl}
                                     alt={post.title}
