@@ -16,7 +16,7 @@ const Hero = () => {
                             <div className="flex justify-between">
                                 <div>
                                     <LogoSvg />
-                                    <h1 className="roboto text-5xl mb-2 text-white">I'M WEB DEVELOPER</h1>
+                                    <h1 className="roboto text-5xl mb-2 text-white">I AM WEB DEVELOPER</h1>
                                     <div className="roboto text-3xl mb-6 text-gray-400">& UI/UX DESIGNER</div>
                                 </div>
                             </div>
