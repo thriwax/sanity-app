@@ -6,10 +6,27 @@
 }
 
 body {
-  background-color: #6f6f6f;
+  background-color: #303030;
 }
 
 .container {
   padding-inline: calc(var(--spacing) * 6) /* 1.5rem = 24px */;
   padding-block: calc(var(--spacing) * 4) /* 1rem = 16px */;
+}
+
+.roboto {
+  font-family: var(--font-roboto), sans-serif;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
 }
