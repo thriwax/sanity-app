@@ -8,18 +8,6 @@ const Footer = () => {
     return (
         <footer className="p-5">
             <div className="container p-6 mx-auto space-y-4 sm:space-y-0 bg-[#1A1A1A] rounded-xl border-[#272727] border-2 shadow-md">
-                <div className="flex justify-between gap-10 text-white">
-                    <div className="w-[67.5%]">
-                        <h2 className="text-3xl font-semibold mb-4 mt-10">LET&apos;S WORK</h2>
-                        <p className="mb-6">I&apos;m a full stack web developer with a passion for creating interactive and responsive web applications. I have experience working with modern web technologies and frameworks. I&apos;m a fast learner and a collaborative team player.</p>
-                    </div>
-                    <div className="w-[32.5%]">
-                        <div className="flex items-center gap-3 text-2xl font-medium text-[#788e86]">
-                            <Arrow />
-                            GET IN TOUCH
-                        </div>
-                    </div>
-                </div>
                 <div className="my-5">
                     <CustomMarquee pauseOnHover />
                 </div>

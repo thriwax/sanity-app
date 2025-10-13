@@ -22,21 +22,21 @@ export default async function PostPage({
 }) {
     const post = await client.fetch<SanityDocument>(POST_QUERY, await params, options);
     const postImageUrl = post.image
-        ? urlFor(post.image)?.width(550).height(310).url()
+        ? urlFor(post.image)?.width(1920).height(1080).url()
         : null;
 
     return (
-        <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4">
-            <Link href="/" className="hover:underline">
+        <main className="container mx-auto min-h-screen p-8 flex flex-col gap-4">
+            <Link href="/blog" className="hover:underline">
                 ← Back to posts
             </Link>
             {postImageUrl && (
                 <Image
                     src={postImageUrl}
                     alt={post.title}
-                    className="aspect-video rounded-xl"
-                    width="550"
-                    height="310"
+                    className="object-fit rounded-xl"
+                    width="1920"
+                    height="1080"
                 />
             )}
             <h1 className="text-4xl font-bold mb-8">{post.title}</h1>

@@ -24,7 +24,7 @@ const Hero = () => {
                                 Leveraging 2 years of user-centered design experience across B2B, B2C, SaaS, and Web3, alongside 6+ years in project management and implementation, I deliver comprehensive digital solutions that propel businesses toward growth.
                             </p>
                             <div className="flex items-center flex-row-reverse justify-between mt-6">
-                                <Link href="https://www.linkedin.com/in/fedor-tatarintsev/" className="w-fit bg-[#e0f0ea] rounded-xl p-2 syne-extrabold shadow-xl">HIRE ME</Link>
+                                <Link href="https://www.linkedin.com/in/fedor-tatarintsev/" className="w-fit bg-[#e0f0ea] rounded-xl p-2 syne-regular shadow-xl text-black">HIRE ME</Link>
                                 <Link
                                     href="https://github.com/thriwax"
                                     aria-label="Github"
