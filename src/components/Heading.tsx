@@ -19,7 +19,7 @@ export default function Heading({
     const Tag = `h${lvl}` as keyof JSX.IntrinsicElements;
 
     return (
-        <div className="container mx-auto flex flex-row items-center gap-4 bg-[#404040] rounded-xl shadow-xl px-4 py-3">
+        <div className="container mx-auto flex flex-row items-center gap-4 bg-[#404040] rounded-xl shadow-xl px-4 py-3 mb-8">
             <svg
                 width="32"
                 height="32"

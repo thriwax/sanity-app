@@ -9,22 +9,22 @@ const Hero = () => {
 
     return (
         <section className="">
-            <div className="container mx-auto my-8 p-0!">
+            <div className="container mx-auto mb-8 p-0!">
                 <div className="flex justify-between gap-10 items-stretch">
                     <div className="w-[65%] flex flex-col gap-10">
                         <div className="flex-1 bg-[#404040] px-6 pb-8 rounded-xl flex flex-col justify-end h-full shadow-xl hover:shadow-2xl transition">
                             <div className="flex gap-6 items-center">
                                 <LogoSvg />
                                 <div>
-                                    <h1 className="roboto text-4xl mb-2 text-white syne-bold">I AM WEB DEVELOPER</h1>
+                                    <h1 className="roboto text-4xl mb-2 text-white syne-bold">I&apos;M WEB DEVELOPER</h1>
                                     <div className="roboto text-2xl mb-6 text-gray-400 syne-bold">& UI/UX DESIGNER</div>
                                 </div>
                             </div>
-                            <p className="roboto text-gray-200 syne-regular">
+                            <p className="roboto text-gray-200 syne-regular mb-6">
                                 Leveraging 2 years of user-centered design experience across B2B, B2C, SaaS, and Web3, alongside 6+ years in project management and implementation, I deliver comprehensive digital solutions that propel businesses toward growth.
                             </p>
                             <div className="flex items-center flex-row-reverse justify-between mt-6">
-                                <Link href="https://www.linkedin.com/in/fedor-tatarintsev/" className="w-fit bg-[#788E86] rounded-xl p-2 syne-extrabold shadow-xl">HIRE ME</Link>
+                                <Link href="https://www.linkedin.com/in/fedor-tatarintsev/" className="w-fit bg-[#e0f0ea] rounded-xl p-2 syne-extrabold shadow-xl">HIRE ME</Link>
                                 <Link
                                     href="https://github.com/thriwax"
                                     aria-label="Github"
