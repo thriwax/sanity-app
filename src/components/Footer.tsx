@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className="flex justify-between gap-10 text-white">
                     <div className="w-[67.5%]">
                         <h2 className="text-3xl font-semibold mb-4 mt-10">LETS WORK</h2>
-                        <p className="mb-6">I'm a full stack web developer with a passion for creating interactive and responsive web applications. I have experience working with modern web technologies and frameworks. I'm a fast learner and a collaborative team player.</p>
+                        <p className="mb-6">I&apos;m a full stack web developer with a passion for creating interactive and responsive web applications. I have experience working with modern web technologies and frameworks. I&apos;m a fast learner and a collaborative team player.</p>
                     </div>
                     <div className="w-[32.5%]">
                         <div className="flex items-center gap-3 text-2xl font-medium text-[#788e86]">
