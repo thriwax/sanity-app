@@ -13,18 +13,18 @@ const Hero = () => {
                 <div className="flex justify-between gap-10 items-stretch">
                     <div className="w-[65%] flex flex-col gap-10">
                         <div className="flex-1 bg-[#404040] px-6 pb-8 rounded-xl flex flex-col justify-end h-full shadow-xl hover:shadow-2xl transition">
-                            <div className="flex justify-between">
+                            <div className="flex gap-6 items-center">
+                                <LogoSvg />
                                 <div>
-                                    <LogoSvg />
-                                    <h1 className="roboto text-5xl mb-2 text-white">I AM WEB DEVELOPER</h1>
-                                    <div className="roboto text-3xl mb-6 text-gray-400">& UI/UX DESIGNER</div>
+                                    <h1 className="roboto text-4xl mb-2 text-white syne-bold">I AM WEB DEVELOPER</h1>
+                                    <div className="roboto text-2xl mb-6 text-gray-400 syne-bold">& UI/UX DESIGNER</div>
                                 </div>
                             </div>
-                            <p className="roboto text-gray-200">
+                            <p className="roboto text-gray-200 syne-regular">
                                 Leveraging 2 years of user-centered design experience across B2B, B2C, SaaS, and Web3, alongside 6+ years in project management and implementation, I deliver comprehensive digital solutions that propel businesses toward growth.
                             </p>
-                            <div className="flex items-center justify-between mt-6">
-                                <Link href="https://www.linkedin.com/in/fedor-tatarintsev/" className="w-fit bg-[#788E86] rounded-xl p-2 font-extrabold shadow-xl">HIRE ME</Link>
+                            <div className="flex items-center flex-row-reverse justify-between mt-6">
+                                <Link href="https://www.linkedin.com/in/fedor-tatarintsev/" className="w-fit bg-[#788E86] rounded-xl p-2 syne-extrabold shadow-xl">HIRE ME</Link>
                                 <Link
                                     href="https://github.com/thriwax"
                                     aria-label="Github"

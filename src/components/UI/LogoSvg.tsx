@@ -2,7 +2,7 @@
 
 function LogoSvg() {
     return (
-        <div className="w-fit h-fit bg-[#272727] rounded-full mb-5 ml-1 shadow-xl">
+        <div className="w-fit h-fit bg-[#272727] rounded-full mb-5 shadow-xl">
             <svg
                 className="flex justify-end p-3 animate-pulse"
                 xmlns="http://www.w3.org/2000/svg"
