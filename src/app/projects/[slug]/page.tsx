@@ -1,5 +1,6 @@
 // app/projects/[slug]/page.tsx
 import { PortableText, type SanityDocument } from "next-sanity";
+import type { PortableTextBlock } from "@portabletext/types";
 import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
@@ -10,9 +11,7 @@ const PROJECT_QUERY = `*[_type == "project" && slug.current == $slug][0]`;
 
 const { projectId, dataset } = client.config();
 const urlFor = (source: SanityImageSource) =>
-    projectId && dataset
-        ? imageUrlBuilder({ projectId, dataset }).image(source)
-        : null;
+    projectId && dataset ? imageUrlBuilder({ projectId, dataset }).image(source) : null;
 
 const options = { next: { revalidate: 30 } };
 
@@ -23,7 +22,7 @@ type ProjectDoc = SanityDocument & {
     tags?: string[];
     _updatedAt?: string;
     _createdAt?: string;
-    body?: unknown;
+    body?: PortableTextBlock[];
 };
 
 export default async function ProjectPage({
@@ -31,17 +30,12 @@ export default async function ProjectPage({
 }: {
     params: Promise<{ slug: string }>;
 }) {
-    const project = await client.fetch<ProjectDoc>(
-        PROJECT_QUERY,
-        await params,
-        options
-    );
+    const project = await client.fetch<ProjectDoc>(PROJECT_QUERY, await params, options);
 
     const projectImageUrl = project?.image
         ? urlFor(project.image)?.width(1920).height(1080).url()
         : null;
 
-    // берем ссылку только из project.href
     const href = project?.href ?? null;
 
     return (
@@ -54,7 +48,7 @@ export default async function ProjectPage({
                 <Image
                     src={projectImageUrl}
                     alt={project.title}
-                    className="object-fit rounded-xl"
+                    className="object-cover rounded-xl"
                     width={1920}
                     height={1080}
                     priority
@@ -69,11 +63,8 @@ export default async function ProjectPage({
 
             {Array.isArray(project.tags) && project.tags.length > 0 && (
                 <div className="mt-2 flex flex-wrap gap-2">
-                    {project.tags.map((t) => (
-                        <span
-                            key={t}
-                            className="text-xs rounded-full border px-2 py-0.5 text-gray-600"
-                        >
+                    {project.tags.map((t: string) => (
+                        <span key={t} className="text-xs rounded-full border px-2 py-0.5 text-gray-600">
                             {t}
                         </span>
                     ))}
@@ -92,9 +83,7 @@ export default async function ProjectPage({
             )}
 
             <div className="prose mt-6">
-                {Array.isArray(project.body as unknown[]) && (
-                    <PortableText value={project.body as any} />
-                )}
+                {Array.isArray(project.body) && <PortableText value={project.body} />}
             </div>
         </main>
     );
