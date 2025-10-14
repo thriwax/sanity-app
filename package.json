@@ -16,7 +16,8 @@
     "next-sanity": "^11.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-fast-marquee": "^1.6.5"
+    "react-fast-marquee": "^1.6.5",
+    "sanity-plugin-seofields": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
