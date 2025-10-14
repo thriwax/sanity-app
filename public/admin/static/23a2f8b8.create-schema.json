@@ -426,6 +426,35 @@
   {
     "fields": [
       {
+        "name": "language",
+        "type": "string"
+      },
+      {
+        "name": "filename",
+        "type": "string"
+      },
+      {
+        "name": "code",
+        "type": "text"
+      },
+      {
+        "of": [
+          {
+            "type": "number",
+            "title": "Highlighted line"
+          }
+        ],
+        "name": "highlightedLines",
+        "type": "array",
+        "title": "Highlighted lines"
+      }
+    ],
+    "name": "code",
+    "type": "object"
+  },
+  {
+    "fields": [
+      {
         "validation": [
           {
             "rules": [
@@ -596,6 +625,14 @@
             ],
             "of": [],
             "type": "block"
+          },
+          {
+            "options": {
+              "language": "html",
+              "withFilename": true,
+              "highlightedLines": true
+            },
+            "type": "code"
           }
         ],
         "name": "body",
@@ -663,6 +700,34 @@
         },
         "name": "image",
         "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/",
+                      "/^mailto$/",
+                      "/^tel$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "href",
+        "type": "url",
+        "title": "Link"
       },
       {
         "of": [
