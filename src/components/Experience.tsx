@@ -34,7 +34,7 @@ const Experience: FC = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.25 }}
                 variants={cardVariants}
-                className="bg-[#443d4b] rounded-xl p-10 shadow-xl flex items-center gap-8"
+                className="bg-[#443d4b] rounded-xl p-10 shadow-xl flex flex-col lg:flex-row items-center gap-8"
             >
                 <div className="flex items-center justify-center w-20 h-20 rounded-full bg-gray-300 text-5xl syne-regular shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2)]">
                     1

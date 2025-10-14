@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import CustomMarquee from "./UI/Marquee";
-import Arrow from "./UI/Arrow";
 
 const Footer = () => {
     return (

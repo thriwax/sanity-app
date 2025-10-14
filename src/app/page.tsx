@@ -7,7 +7,7 @@ import Banner from "@/components/Banner";
 export default async function IndexPage() {
 
   return (
-    <main>
+    <main className="mx-5 lg:mx-0">
       <Hero />
       <Banner />
       <Heading>Experience</Heading>

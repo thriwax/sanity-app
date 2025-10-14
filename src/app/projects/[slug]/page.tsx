@@ -1,3 +1,4 @@
+// app/projects/[slug]/page.tsx
 import { PortableText, type SanityDocument } from "next-sanity";
 import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
@@ -15,12 +16,22 @@ const urlFor = (source: SanityImageSource) =>
 
 const options = { next: { revalidate: 30 } };
 
+type ProjectDoc = SanityDocument & {
+    title: string;
+    href?: string;
+    image?: SanityImageSource;
+    tags?: string[];
+    _updatedAt?: string;
+    _createdAt?: string;
+    body?: unknown;
+};
+
 export default async function ProjectPage({
     params,
 }: {
     params: Promise<{ slug: string }>;
 }) {
-    const project = await client.fetch<SanityDocument>(
+    const project = await client.fetch<ProjectDoc>(
         PROJECT_QUERY,
         await params,
         options
@@ -30,12 +41,8 @@ export default async function ProjectPage({
         ? urlFor(project.image)?.width(1920).height(1080).url()
         : null;
 
-    // пытаемся достать ссылку на проект (href может быть внутри body)
-    const href =
-        project?.href ||
-        (Array.isArray(project.body) &&
-            project.body.find((b: any) => typeof b.href === "string")?.href) ||
-        null;
+    // берем ссылку только из project.href
+    const href = project?.href ?? null;
 
     return (
         <main className="container mx-auto min-h-screen p-8 flex flex-col gap-4">
@@ -57,12 +64,12 @@ export default async function ProjectPage({
             <h1 className="text-4xl font-bold mb-2">{project.title}</h1>
 
             <div className="text-sm text-gray-500">
-                Updated: {new Date(project._updatedAt ?? project._createdAt).toLocaleDateString()}
+                Updated: {new Date(project._updatedAt ?? project._createdAt ?? Date.now()).toLocaleDateString()}
             </div>
 
             {Array.isArray(project.tags) && project.tags.length > 0 && (
                 <div className="mt-2 flex flex-wrap gap-2">
-                    {project.tags.map((t: string) => (
+                    {project.tags.map((t) => (
                         <span
                             key={t}
                             className="text-xs rounded-full border px-2 py-0.5 text-gray-600"
@@ -85,7 +92,9 @@ export default async function ProjectPage({
             )}
 
             <div className="prose mt-6">
-                {Array.isArray(project.body) && <PortableText value={project.body} />}
+                {Array.isArray(project.body as unknown[]) && (
+                    <PortableText value={project.body as any} />
+                )}
             </div>
         </main>
     );
