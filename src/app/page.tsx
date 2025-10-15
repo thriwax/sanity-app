@@ -4,6 +4,7 @@ import Experience from "@/components/Experience";
 import LatestProjects from "@/components/LatestProjects";
 import Banner from "@/components/Banner";
 import { Metadata } from "next";
+import Technologies from "@/components/Technologies";
 
 export const metadata: Metadata = {
   title: "I'm a Web Developer | My Portfolio – Fedor Tatarintsev",
@@ -16,6 +17,8 @@ export default async function IndexPage() {
     <main className="mx-5 lg:mx-0">
       <Hero />
       <Banner />
+      <Heading>Technologies</Heading>
+      <Technologies />
       <Heading>Experience</Heading>
       <Experience />
       <Heading>Projects</Heading>
