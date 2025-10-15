@@ -46,7 +46,6 @@ export default function Header() {
     const links: Link[] = [
         { href: '/', label: 'Home' },
         { href: '/projects', label: 'Projects' },
-        { href: '/blog', label: 'Blog' },
     ];
 
     return (
@@ -103,7 +102,7 @@ export default function Header() {
                                 </svg>
                             </button>
 
-                            <h2 className="mb-4 text-center text-xl font-semibold">Menu</h2>
+                            <h2 className="mb-4 text-center text-xl font-semibold text-black">Menu</h2>
 
                             <ul className="space-y-2">
                                 {links.map((item) => (
