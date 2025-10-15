@@ -55,7 +55,7 @@ export default async function ProjectsPage() {
                                         {project.tags.map((t: string) => (
                                             <span
                                                 key={t}
-                                                className="text-xs rounded-full border px-2 py-0.5 text-gray-600"
+                                                className="text-xs rounded-full border px-2 py-0.5 text-gray-300"
                                             >
                                                 {t}
                                             </span>

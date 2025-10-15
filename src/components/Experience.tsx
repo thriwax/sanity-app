@@ -34,20 +34,20 @@ const Experience: FC = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.25 }}
                 variants={cardVariants}
-                className="bg-[#443d4b] rounded-xl p-10 shadow-xl flex flex-col lg:flex-row items-center gap-8"
+                className="bg-[#443d4b] rounded-xl p-10 shadow-xl flex flex-col lg:flex-row items-left lg:items-center gap-8"
             >
-                <div className="flex items-center justify-center w-20 h-20 rounded-full bg-gray-300 text-5xl syne-regular shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2)]">
+                <div className="flex items-center justify-center w-15 h-15 lg:w-20 lg:h-20 rounded-full bg-gray-300 text-3xl lg:text-5xl syne-regular shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2)]">
                     1
                 </div>
-                <div className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-[2px] before:bg-[#FFF] before:rounded-sm">
-                    <div className="syne-bold text-xl">
+                <div className="relative lg:pl-6 lg:before:content-[''] lg:before:absolute lg:before:left-0 lg:before:top-0 lg:before:h-full lg:before:w-[2px] lg:before:bg-[#FFF] lg:before:rounded-sm">
+                    <div className="syne-bold text-xs lg:text-xl">
                         Company: <span className="syne-semibold">Just Web Agency</span>
                     </div>
-                    <h3 className="text-5xl mb-3">Wordpress Developer</h3>
+                    <h3 className="text-2xl lg:text-5xl mb-3">Wordpress Developer</h3>
                     <div className="mb-3">
-                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[14px]">WOOCOMMERCE</span>
-                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[14px]">SEO</span>
-                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[14px]">ACF</span>
+                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[11px] lg:text-[14px]">WOOCOMMERCE</span>
+                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[11px] lg:text-[14px]">SEO</span>
+                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[11px] lg:text-[14px]">ACF</span>
                     </div>
                     <p className="text-right bg-[#696969] rounded-xl w-fit px-3 py-1 text-[12px]">
                         February 2023 - September 2023
@@ -62,20 +62,20 @@ const Experience: FC = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.25 }}
                 variants={cardVariants}
-                className="bg-[#574f7d] rounded-xl p-10 shadow-xl flex items-center gap-8"
+                className="bg-[#574f7d] rounded-xl p-10 shadow-xl flex flex-col lg:flex-row items-left lg:items-center gap-8"
             >
-                <div className="flex items-center justify-center w-20 h-20 rounded-full bg-gray-300 text-5xl syne-regular shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2)] overflow-hidden pb-[7px]">
+                <div className="flex items-center justify-center w-15 h-15 lg:w-20 lg:h-20 rounded-full bg-gray-300 text-3xl lg:text-5xl syne-regular shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2)] overflow-hidden pb-[7px]">
                     2
                 </div>
-                <div className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-[2px] before:bg-[#FFF] before:rounded-sm">
-                    <div className="syne-bold text-xl">
+                <div className="relative lg:pl-6 lg:before:content-[''] lg:before:absolute lg:before:left-0 lg:before:top-0 lg:before:h-full lg:before:w-[2px] lg:before:bg-[#FFF] lg:before:rounded-sm">
+                    <div className="syne-bold text-xs lg:text-xl">
                         Company: <span className="syne-semibold">WGG Agency</span>
                     </div>
-                    <h3 className="text-5xl mb-3">UI/UX Developer</h3>
+                    <h3 className="text-2xl lg:text-5xl mb-3">UI/UX Developer</h3>
                     <div className="mb-3">
-                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[14px]">FIGMA</span>
-                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[14px]">WORDPRESS</span>
-                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[14px]">ECOMMERCE</span>
+                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[11px] lg:text-[14px]">FIGMA</span>
+                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[11px] lg:text-[14px]">WORDPRESS</span>
+                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[11px] lg:text-[14px]">ECOMMERCE</span>
                     </div>
                     <p className="text-right bg-[#404040] rounded-xl w-fit px-3 py-1 text-[12px]">
                         September 2023 - January 2024
@@ -90,20 +90,20 @@ const Experience: FC = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.25 }}
                 variants={cardVariants}
-                className="bg-[#95adbe] rounded-xl p-10 shadow-xl flex items-center gap-8"
+                className="bg-[#95adbe] rounded-xl p-10 shadow-xl flex flex-col lg:flex-row items-left lg:items-center gap-8"
             >
-                <div className="flex items-center justify-center w-20 h-20 rounded-full bg-gray-300 text-5xl syne-regular shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2)] overflow-hidden pb-[7px]">
+                <div className="flex items-center justify-center w-15 h-15 lg:w-20 lg:h-20 rounded-full bg-gray-300 text-3xl lg:text-5xl syne-regular shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2)] overflow-hidden pb-[7px]">
                     4
                 </div>
-                <div className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-[2px] before:bg-[#FFF] before:rounded-sm">
-                    <div className="syne-bold text-xl">
+                <div className="relative lg:pl-6 lg:before:content-[''] lg:before:absolute lg:before:left-0 lg:before:top-0 lg:before:h-full lg:before:w-[2px] lg:before:bg-[#FFF] lg:before:rounded-sm">
+                    <div className="syne-bold text-xs lg:text-xl">
                         Company: <span className="syne-semibold">Digital Strategy</span>
                     </div>
-                    <h3 className="text-5xl mb-3">Web Developer</h3>
+                    <h3 className="text-2xl lg:text-5xl mb-3">Web Developer</h3>
                     <div className="mb-3">
-                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[14px]">SEO</span>
-                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[14px]">WORDPRESS</span>
-                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[14px]">REACT</span>
+                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[11px] lg:text-[14px]">SEO</span>
+                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[11px] lg:text-[14px]">WORDPRESS</span>
+                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[11px] lg:text-[14px]">REACT</span>
                     </div>
                     <p className="text-right bg-[#404040] rounded-xl w-fit px-3 py-1 text-[12px]">
                         June 2024 - August 2025
@@ -118,20 +118,20 @@ const Experience: FC = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.25 }}
                 variants={cardVariants}
-                className="bg-[#e0f0ea] text-black rounded-xl p-10 shadow-xl flex items-center gap-8"
+                className="bg-[#e0f0ea] text-black rounded-xl p-10 shadow-xl flex flex-col lg:flex-row items-left lg:items-center gap-8"
             >
-                <div className="flex items-center justify-center w-20 h-20 rounded-full bg-gray-300 text-5xl syne-regular shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2)] overflow-hidden pb-[7px]">
+                <div className="flex items-center justify-center w-15 h-15 lg:w-20 lg:h-20 rounded-full bg-gray-300 text-3xl lg:text-5xl syne-regular shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2)] overflow-hidden pb-[7px]">
                     5
                 </div>
-                <div className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-[2px] before:bg-[#000] before:rounded-sm">
-                    <div className="syne-bold text-xl">
+                <div className="relative lg:pl-6 lg:before:content-[''] lg:before:absolute lg:before:left-0 lg:before:top-0 lg:before:h-full lg:before:w-[2px] lg:before:bg-[#FFF] lg:before:rounded-sm">
+                    <div className="syne-bold text-xs lg:text-xl">
                         Company: <span className="syne-semibold">QLead</span>
                     </div>
-                    <h3 className="text-5xl mb-3">Front-End Developer</h3>
+                    <h3 className="text-2xl lg:text-5xl mb-3">Front-End Developer</h3>
                     <div className="mb-3">
-                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[14px] text-white">SEO</span>
-                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[14px] text-white">WORDPRESS</span>
-                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[14px] text-white">UI/UX</span>
+                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[11px] lg:text-[14px] text-white">SEO</span>
+                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[11px] lg:text-[14px] text-white">WORDPRESS</span>
+                        <span className="bg-gray-500 rounded-md px-3 py-1 mr-3 text-[11px] lg:text-[14px] text-white">UI/UX</span>
                     </div>
                     <p className="text-right bg-[#d0d0d0] rounded-xl w-fit px-3 py-1 text-[12px]">
                         August 2025 - Still Working

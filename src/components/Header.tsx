@@ -51,9 +51,9 @@ export default function Header() {
 
     return (
         <header className="sticky top-0 z-50 p-5 mb-5">
-            <nav className="container mx-auto flex h-20 items-center justify-between px-4 bg-[#1A1A1A] rounded-xl border-[#272727] border-2 shadow-md">
+            <nav className="container mx-auto flex h-20 items-center justify-between px-2 lg:px-4 bg-[#1A1A1A] rounded-xl border-[#272727] border-2 shadow-md">
 
-                <Link href="/" className="rounded-md px-2 py-1 text-2xl font-bold bg-[#272727] text-white hover:bg-white hover:text-black transition">
+                <Link href="/" className="rounded-md px-2 py-1 text-xl lg:text-2xl font-bold bg-[#272727] text-white hover:bg-white hover:text-black transition">
                     Fedor Tatarintsev
                 </Link>
 

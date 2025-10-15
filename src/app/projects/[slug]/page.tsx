@@ -155,7 +155,7 @@ export default async function ProjectPage({
 
     return (
         <main className="container mx-auto min-h-screen p-8 flex flex-col gap-4">
-            <Link href="/projects" className="hover:underline">
+            <Link href="/projects" className="hover:underline bg-[#95adbe] w-fit rounded-xl px-3 py-1 text-black">
                 ← Back to projects
             </Link>
 
@@ -172,6 +172,10 @@ export default async function ProjectPage({
 
             <h1 className="text-4xl font-bold mb-2">{project.title}</h1>
 
+            <div className="prose">
+                {Array.isArray(project.body) && <PortableText value={project.body} />}
+            </div>
+
             <div className="text-sm text-gray-500">
                 Updated: {new Date(project._updatedAt ?? project._createdAt ?? Date.now()).toLocaleDateString()}
             </div>
@@ -179,7 +183,7 @@ export default async function ProjectPage({
             {Array.isArray(project.tags) && project.tags.length > 0 && (
                 <div className="mt-2 flex flex-wrap gap-2">
                     {project.tags.map((t: string) => (
-                        <span key={t} className="text-xs rounded-full border px-2 py-0.5 text-gray-600">
+                        <span key={t} className="text-xs rounded-full border px-2 py-0.5 text-gray-300">
                             {t}
                         </span>
                     ))}
@@ -191,15 +195,12 @@ export default async function ProjectPage({
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block mt-4 text-blue-600 hover:underline font-medium"
+                    className="inline-block mt-4 text-white uppercase text-center rounded-xl shadow-xl py-5 bg-[#574f7d] hover:underline font-medium"
                 >
-                    🔗 Visit project
+                    Visit project
                 </a>
             )}
 
-            <div className="prose mt-6">
-                {Array.isArray(project.body) && <PortableText value={project.body} />}
-            </div>
         </main>
     );
 }
