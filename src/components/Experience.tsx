@@ -123,7 +123,7 @@ const Experience: FC = () => {
                 <div className="flex items-center justify-center w-15 h-15 lg:w-20 lg:h-20 rounded-full bg-gray-300 text-3xl lg:text-5xl syne-regular shadow-[inset_2px_2px_4px_rgba(0,0,0,0.2)] overflow-hidden pb-[7px]">
                     5
                 </div>
-                <div className="relative lg:pl-6 lg:before:content-[''] lg:before:absolute lg:before:left-0 lg:before:top-0 lg:before:h-full lg:before:w-[2px] lg:before:bg-[#FFF] lg:before:rounded-sm">
+                <div className="relative lg:pl-6 lg:before:content-[''] lg:before:absolute lg:before:left-0 lg:before:top-0 lg:before:h-full lg:before:w-[2px] lg:before:bg-[#000] lg:before:rounded-sm">
                     <div className="syne-bold text-xs lg:text-xl">
                         Company: <span className="syne-semibold">QLead</span>
                     </div>

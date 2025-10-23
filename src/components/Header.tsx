@@ -46,6 +46,7 @@ export default function Header() {
     const links: Link[] = [
         { href: '/', label: 'Home' },
         { href: '/projects', label: 'Projects' },
+        { href: '/music', label: 'Music' }
     ];
 
     return (

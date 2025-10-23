@@ -69,3 +69,57 @@ body {
   font-weight: 800;
   font-style: normal;
 }
+
+/* Кликая по полосе, всё работает. Скрываем только нативную ручку. */
+.range-clean {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  height: 28px; /* комфортная зона тапа/клика */
+  width: 100%;
+}
+.range-clean:focus {
+  outline: none;
+}
+
+/* Chrome / Safari */
+.range-clean::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.range-clean::-webkit-slider-runnable-track {
+  background: transparent; /* визуал дорисовываем нашим overlay */
+}
+
+/* Firefox */
+.range-clean::-moz-range-thumb {
+  width: 0;
+  height: 0;
+  border: 0;
+  background: transparent;
+}
+.range-clean::-moz-range-track {
+  background: transparent;
+}
+/* чтобы FF не подкрашивал прогресс внутри трека */
+.range-clean::-moz-range-progress {
+  background: transparent;
+}
+
+/* Edge / IE */
+.range-clean::-ms-thumb {
+  width: 0;
+  height: 0;
+  border: 0;
+  background: transparent;
+}
+.range-clean::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}

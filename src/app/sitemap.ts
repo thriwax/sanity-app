@@ -33,6 +33,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     } | order(updated desc)`
   );
 
+  // Музыка
+  const music = await client.fetch<Item[]>(
+    `*[_type == "music" && defined(slug.current)]{
+      "slug": slug.current,
+      "updated": coalesce(_updatedAt, _createdAt)
+    } | order(updated desc)`
+  );
+
   // Подсчёт для архивов
   const postsCount = await client.fetch<number>(`count(*[_type == "post"])`);
   const projectsCount = await client.fetch<number>(`count(*[_type == "project"])`);
@@ -40,8 +48,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogPages = Math.max(1, Math.ceil(postsCount / PAGE_SIZE_BLOG));
   const projectPages = Math.max(1, Math.ceil(projectsCount / PAGE_SIZE_PROJECTS));
 
-  // Базовые статические страницы
   const now = new Date().toISOString();
+
+  // Базовые статические страницы
   const entries: MetadataRoute.Sitemap = [
     {
       url: `${SITE_URL}/`,
@@ -60,6 +69,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: projects[0]?.updated ?? now,
       changeFrequency: "weekly",
       priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/music`,
+      lastModified: music[0]?.updated ?? now,
+      changeFrequency: "weekly",
+      priority: 0.85,
     },
   ];
 
@@ -83,7 +98,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   }
 
-  // Архивы (пагинация). Страницу 1 считаем как /blog и /projects, поэтому с 2.
+  // Музыка
+  for (const m of music) {
+    entries.push({
+      url: `${SITE_URL}/music/${encodeURIComponent(m.slug)}`,
+      lastModified: m.updated,
+      changeFrequency: "monthly",
+      priority: 0.65,
+    });
+  }
+
+  // Архивы (блог/проекты)
   for (let page = 2; page <= blogPages; page++) {
     entries.push({
       url: `${SITE_URL}${BLOG_ARCHIVE_PATH(page)}`,
