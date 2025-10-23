@@ -3,6 +3,7 @@ import { client } from "@/sanity/client";
 import type { SanityDocument } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import Image from "next/image";
 
 const MUSIC_LIST_QUERY = `*[
   _type == "music" && defined(slug.current)
@@ -44,9 +45,11 @@ export default async function MusicPage() {
                                 className="block group rounded-lg border p-3 hover:shadow-md transition"
                             >
                                 {coverUrl && (
-                                    <img
+                                    <Image
                                         src={coverUrl}
                                         alt={`${doc.artist} — ${doc.title}`}
+                                        width={800}
+                                        height={800}
                                         className="rounded-md mb-3 object-cover w-full h-48 sm:h-56 lg:h-60"
                                     />
                                 )}

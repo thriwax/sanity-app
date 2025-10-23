@@ -52,7 +52,29 @@ type MusicDoc = SanityDocument & {
     spotifyUrl?: string;
     soundcloudUrl?: string;
     audioUrl?: string;
-    seo?: any;
+    seo?: {
+        title?: string;
+        description?: string;
+        keywords?: string[];
+        canonicalUrl?: string;
+        metaImage?: SanityImageSource;
+        robots?: { noIndex?: boolean; noFollow?: boolean };
+        openGraph?: {
+            title?: string;
+            description?: string;
+            siteName?: string;
+            type?: string; // будет санитизировано
+            image?: SanityImageSource;
+            url?: string;
+        };
+        twitter?: {
+            card?: string; // будет санитизировано
+            site?: string;
+            title?: string;
+            description?: string;
+            creator?: string; // поле есть в данных
+        };
+    };
 };
 
 /** ---------- SEO ---------- */
