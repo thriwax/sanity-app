@@ -22,7 +22,7 @@ export default function Technologies() {
                 {tech.map((t) => (
                     <div
                         key={t.alt}
-                        className="bg-[#4e4e4e] rounded-2xl shadow-xl p-4 sm:p-5 flex items-center justify-center"
+                        className="bg-[#4e4e4e] hover:bg-[#dba100] rounded-2xl shadow-xl p-4 sm:p-5 flex items-center justify-center"
                     >
                         <Image alt={t.alt} src={t.src} width={35} height={35} />
                     </div>
