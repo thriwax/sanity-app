@@ -5,6 +5,12 @@ import { type SanityDocument } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "@/sanity/client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Projects | Fedor Tatarintsev",
+    description: "Archive Page for Projects developed by Fedor Tatarintsev",
+};
 
 const PROJECTS_QUERY = `*[
   _type == "project" && defined(slug.current)

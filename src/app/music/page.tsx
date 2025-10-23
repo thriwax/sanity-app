@@ -4,6 +4,12 @@ import type { SanityDocument } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Music | Fedor Tatarintsev",
+    description: "Archive Page for Music produced by Fedor Tatarintsev",
+};
 
 const MUSIC_LIST_QUERY = `*[
   _type == "music" && defined(slug.current)

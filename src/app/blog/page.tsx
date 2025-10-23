@@ -4,6 +4,12 @@ import { type SanityDocument } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "@/sanity/client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Projects | Fedor Tatarintsev",
+    description: "Archive Page for Blog by Fedor Tatarintsev",
+};
 
 const POSTS_QUERY = `*[
   _type == "post" && defined(slug.current)
