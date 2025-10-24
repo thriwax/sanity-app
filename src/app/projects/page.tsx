@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     description: "Archive Page for Projects developed by Fedor Tatarintsev",
 };
 
+// ✅ Включаем ISR для всей страницы (как в /music/)
+export const revalidate = 30;
+
 const PROJECTS_QUERY = `*[
   _type == "project" && defined(slug.current)
 ]|order(_updatedAt desc)[0...12]{
@@ -30,7 +33,12 @@ const urlFor = (source: SanityImageSource) =>
         : null;
 
 export default async function ProjectsPage() {
-    const projects = await client.fetch<SanityDocument[]>(PROJECTS_QUERY);
+    // ✅ Дополнительно ставим revalidate и тег на сам запрос (на будущее, если захотите вебхук)
+    const projects = await client.fetch<SanityDocument[]>(
+        PROJECTS_QUERY,
+        {},
+        { next: { revalidate: 30, tags: ["projects"] } }
+    );
 
     return (
         <section className="container mx-auto p-4">
