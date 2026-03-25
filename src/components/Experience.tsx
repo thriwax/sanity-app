@@ -125,7 +125,7 @@ const Experience: FC = () => {
                 </div>
                 <div className="relative lg:pl-6 lg:before:content-[''] lg:before:absolute lg:before:left-0 lg:before:top-0 lg:before:h-full lg:before:w-[2px] lg:before:bg-[#000] lg:before:rounded-sm">
                     <div className="syne-bold text-xs lg:text-xl">
-                        Company: <span className="syne-semibold">QLead</span>
+                        Company: <span className="syne-semibold">NDA</span>
                     </div>
                     <h3 className="text-2xl lg:text-5xl mb-3">Front-End Developer</h3>
                     <div className="mb-3">
